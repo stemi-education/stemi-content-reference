@@ -1,0 +1,11 @@
+{
+  "name": "Ultrasonic",
+  "type": "ADDITIONAL_COURSE",
+  "thumbnail": "thumbnail.png",
+  "prerequisits": [
+    {"name": "STEMI Hexapod", "link": "https://shop.stemi.education"},
+    {"name": "Ultrasonic sensor", "link": "http://www.store.diigiit.com/image/data/sensors/hc-sr04-ultrasonic-sensor.jpg"},
+    {"name": "Internet connection", "link": null},
+    {"name": "PC", "link": null}
+  ]
+}

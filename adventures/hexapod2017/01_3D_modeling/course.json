@@ -1,0 +1,9 @@
+{
+  "name": "3D modelling",
+  "type": "BASE_COURSE",
+  "thumbnail": "thumbnail.png",
+  "prerequisits": [
+    {"name": "Internet connection", "link": null},
+    {"name": "PC", "link": null}
+  ]
+}

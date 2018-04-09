@@ -1,0 +1,56 @@
+{
+  "name": "Ultrasonic sensor",
+  "type": "ADDON",
+  "availability": "AVAILABLE",
+  "price": [
+    {
+      "currency": "USD",
+      "amount": 40,
+      "discount": null
+    },
+    {
+      "currency": "HRK",
+      "amount": 230,
+      "discount": null
+    }
+  ],
+  "thumbnail": "thumbnail.jpeg",
+  "cover": "cover.jpeg",
+  "tabs": [
+    {
+      "title": "Overview",
+      "content": [
+        {
+          "type": "HeroImage",
+          "props": {
+            "imagePosition": "left",
+            "imagePath": "image1.png",
+            "title": "The journey start with a box",
+            "description": "traaflasdjsalfk"
+          }
+        },
+        {
+          "type": "FeaturesList",
+          "props": {
+            "features": [
+              {
+                "icon": "icon1.png",
+                "label": "56 lessons"
+              },
+              {
+                "icon": "icon2.png",
+                "label": "26 hours on-demand video"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Specification"
+    },
+    {
+      "title": "What others say"
+    }
+  ]
+}
