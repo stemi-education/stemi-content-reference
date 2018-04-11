@@ -33,8 +33,7 @@ products
 |   |   |-- thumbnail.png
 |   \-- product.json
 |-- drone2017
-.   .
-.   .
+.
 ```
 
 `product.json` has a following structure:
@@ -141,6 +140,7 @@ The course directory is defined by
 the files such as media files or sourcecode files for education are located
 (they can be referenced by links in lesson content for download)
   - subsection directories with lessons (subsection nesting is NOT allowed) and `lessons.json` file
+  - only `.md` files and `lessons.json` are allowed in subsection directory
   - lessons in the form of `.md` files
 
   A typical course directory can be seen here:
@@ -163,3 +163,50 @@ the files such as media files or sourcecode files for education are located
 
 Pay special attention to directory and file naming - these names were chosen to
 ensure the desired ordering of courses, subsections and lessons.
+
+### Lesson.md format
+
+Format of lesson files consists of mixture of [YAML](http://yaml.org/) and [Markdown](https://daringfireball.net/projects/markdown/). [YAML 1.2 spec](http://yaml.org/spec/1.2/spec.html#id2800132) defines three-hyphens (`---`) for delimiting
+completely independent documents. We use this feature to delimit YAML with metadata from Markdown.
+
+```
+title: Modeling First Servo Motor - Part 1
+id: !!str 619323
+published: true
+---
+
+## Modeling First Servo Motor - Part 1
+
+Hi guys! :)
+
+We are now going to start 3D modeling. While doing so, we are going to get familiar
+with the concept of 3D modeling and get to know a lot of new concepts and possibilities
+that Fusion 360 offers.
+
+/youtube s5BMMU3kzjs
+
+We learnt:
+* how to create __components__
+* what are components
+* some Fusion __shortcuts__ (for example C for the centre diameter circle, L for
+line and so on) that save our time :)
+```
+
+Notice `/youtube` line in the middle of Markdown content. This is our internal
+tag for embedding youtube videos in our educational content. This should be substituted
+with appropriate HTML on either on backend or frontend.
+
+_RESTRICTION_: This content specification allows only one video per lesson file. For
+this reason we are considering moving the youtube video id in the YAML portion of
+the file, and always rendering the video as first thing below the title of the lesson.
+
+For now, only the `id` field in the YAML metadata is mandatory. `id` is used for
+generating unique, static and standardised REST API for the lessons.
+
+`published` tag marks the lesson visible or not visible on the production server.
+Default value is `true`. If the value is `false` the lesson is only displayed on
+the `dev` server.
+
+Assets like media, sourcecode files etc. are placed _per course_ in the courses
+`assets` directory. No assets or directories containing assets should be put in
+course subdirectories.
